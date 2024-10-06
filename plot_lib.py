@@ -4,14 +4,19 @@ import math
 x_vals = []
 y_vals = []
 
-for it in range(1000):
-    zx = it * 0.4 * 3.14
-    zy = math.sin(it)
-    x_vals.append(zx)
-    y_vals.append(zy)
+amplitude = 1  # V
+frequency = 50  # Hz
+time_duration = 0.1  # s
+sampling_rate = 100  # 
+
+for it in range(0, int(sampling_rate ), 1):
+    x_vals.append(int(it))
+
+for it_y in x_vals:
+    y_vals.append( amplitude * math.sin(2 * math.pi * frequency * it_y / 1000))
 
 plt.plot(x_vals, y_vals)
 plt.ylabel('sin(x)')
-plt.title('Графік синусоїди')
+plt.title('')
 plt.grid(True)
 plt.show()

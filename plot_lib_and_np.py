@@ -1,18 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 
-e0 = 50
-pi = math.pi
+frequency = 50
+pi = np.pi
 amplitude = 220
 
 t = np.linspace(0, 100)
-fase0 = 2 * math.pi * t * amplitude
+fase0 = 2 * pi * t * frequency
 
 
-y0 = e0 * np.cos(fase0)
-y1 = e0 * np.cos(fase0 + 2 * pi / 3)
-y2 = e0 * np.cos(fase0 + 4 * pi / 3)
+y0 = amplitude * np.sin(fase0)
+y1 = amplitude * np.sin(fase0 + 2 * pi / 3)
+y2 = amplitude * np.sin(fase0 + 4 * pi / 3)
 
 
 y3 = [0] * len(t)
