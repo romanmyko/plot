@@ -34,3 +34,10 @@ class Signal:
         y_vals = self.amplitude * np.sin(2 * np.pi * self.frequency * t)
 
         return f" frequency: {self.frequency} Hz , '/n' amplitude {self.amplitude} V ", x_vals, y_vals
+    
+    def meandr_wave(self):
+        t = np.linspace(0, self.time_duration, int(
+            self.time_duration * self.sampling_rate))
+        x_vals = t
+        y_vals = np.sign (np.sin(t))
+        return f" frequency: {self.frequency} Hz , '/n' amplitude {self.amplitude} V ", x_vals, y_vals
